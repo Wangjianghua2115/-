@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>主要信息</legend>
+            账户：<input type="text" name="account" maxlength="10"><br>
+            密码：<input id="mima1" type="password" maxlength="10"><br>
+            确认密码：<input id="mima2" type="password" maxlength="10"><br>
+        </fieldset>
+        <input type="button" value="确认" id="login">
+        <input type="button" value="注册" id="zhuce">
+    </form>
+
+    <script>
+        const zhuce = document.getElementById("zhuce")
+        const login = document.getElementById("login")
+        const mima1 = document.getElementById("mima1")
+        const mima2 = document.getElementById("mima2")
+
+        const username = document.getElementsByName("account")[0]
+        zhuce.onclick = function(){
+            if(mima1.value !== mima2.value){
+                alert("两次密码不一致")
+            }else{
+                console.log(username.value)
+                console.log(mima1.value)
+            }
+        }
+        login.onclick = function(){
+            if(mima1.value == "admin" && username.value == "admin"){
+                location.href="index.html"
+            }
+        }
+    </script>
+</body>
+</html>
